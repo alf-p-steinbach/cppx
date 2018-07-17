@@ -11,6 +11,7 @@
 namespace tag {
     using stdlib::ext::ptr_;
     using Iterators = ptr_<struct Iterators_tag>;   // As pointer type it's instantiable.
+    using Values    = ptr_<struct Values_tag>;      // As pointer type it's instantiable.
 }  // namespace tag
 
 namespace cppx{
@@ -66,7 +67,7 @@ namespace cppx{
             : unordered_set<Key>{ range.begin(), range.end() }
         {}
         
-        Set_( initializer_list<Key> values )
+        Set_( tag::Values, initializer_list<Key> values )
             : unordered_set<Key>{ move( values ) }
         {}
         
@@ -193,7 +194,7 @@ namespace cppx{
     { return find( begin, end, v ) != end; }
 
     template< class Key, Size n, class Arg >
-    auto in( ref_<raw_array_of_<n, Key>> a, ref_<const Arg> v )
+    auto in( ref_<raw_array_of_<n, const Key>> a, ref_<const Arg> v )
         -> bool
     { return in_range( begin( a ), end( a ), v ); }
 
@@ -203,7 +204,7 @@ namespace cppx{
     { return binary_search( begin, end, v ); }
 
     template< class Key, Size n, class Arg >
-    auto in_sorted( ref_<raw_array_of_<n, Key>> a, ref_<const Arg> v )
+    auto in_sorted( ref_<raw_array_of_<n, const Key>> a, ref_<const Arg> v )
         -> bool
     { return in_sorted_range( begin( a ), end( a ), v ); }
 
