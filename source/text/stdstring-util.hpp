@@ -3,7 +3,7 @@
 
 #include <stdlib/c/string.hpp>      // strlen
 #include <stdlib/string.hpp>        // std::(wstring)
-#include <stdlib/utility.hpp>       // std::enable_if...
+#include <stdlib/utility.hpp>       // std::(enable_if_t, move)
 #include <stdlib/type_traits.hpp>   // std::is_same
 
 namespace cppx {
@@ -11,8 +11,10 @@ namespace cppx {
     using std::basic_string;
     using std::enable_if_t;
     using std::is_same_v;
+    using std::move;
     using std::string;
     using std::wstring;
+
 
     //------------------------------------ Type classification
 
@@ -114,9 +116,13 @@ namespace cppx {
             -> ptr_<const Char>
         { return m_text.c_str(); }
 
-        auto str() const
+        auto str() const&
             -> ref_<const basic_string<Char>>
         { return m_text; }
+
+        auto str() &&
+            -> basic_string<Char>
+        { return move( m_text ); }
 
         template< class Value >
         void append_text_for( ref_<const Value> v )
@@ -126,12 +132,17 @@ namespace cppx {
 
         operator ptr_<const Char>() const
         {
-            return raw_str();
+            return m_text.c_str();
         }
 
         operator ref_<const basic_string<Char>>() const
         {
-            return str();
+            return m_text;
+        }
+
+        operator basic_string<Char>() &&
+        {
+            return move( m_text );
         }
 
         template< class Value >

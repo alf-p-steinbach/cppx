@@ -117,7 +117,7 @@ namespace cppx{
         -> Set_<typename iterator_traits<Input_iterator>::value_type>
     {
         using Value = typename iterator_traits<Input_iterator>::value_type;
-        return Set_<Value>{ iterators_tag, first, beyond };
+        return { iterators_tag, first, beyond };
     }
 
         // Basic set union
