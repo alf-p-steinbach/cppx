@@ -19,19 +19,19 @@ namespace cppx {
         mutable Size        m_length    = -1;
 
     public:
-        auto s() const -> ptr_<const Char> { return m_s; }
+        auto ptr() const
+            -> ptr_<const Char>
+        { return m_s; }
 
-        operator ptr_<const Char>() const { return s(); }
+        auto str() const
+            -> basic_string<Char>
+        { return basic_string<Char>( ptr(), length() ); }
+
+        operator ptr_<const Char>()  const { return ptr(); }
 
         auto length() const
             -> Size
         { return (m_length == -1? m_length = char_traits<Char>::length( m_s ) : m_length); }
-
-        auto std_string() const
-            -> basic_string<Char>
-        { return basic_string<Char>( s(), length() ); }
-
-        operator basic_string<Char>() const { return std_string(); }
 
         friend auto compare( ref_<const C_string_ref> a, ref_<const C_string_ref> b )
             -> int
