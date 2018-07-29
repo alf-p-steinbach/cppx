@@ -23,16 +23,16 @@ namespace cppx
 
     class Source_location
     {
-        string  m_function_name;            // Empty if none.
         string  m_filename;
         int     m_linenumber;
         int     m_character_position;       // -1 if none.
+        string  m_function_name;            // Empty if none.
 
     public:
-        auto function_name() const      -> string   { return m_function_name; }
         auto filename() const           -> string   { return m_filename; }
         auto linenumber() const         -> int      { return m_linenumber; }
         auto character_position() const -> int      { return m_character_position; }
+        auto function_name() const      -> string   { return m_function_name; }
 
         auto file_and_line() const
             -> string
@@ -74,14 +74,14 @@ namespace cppx
 
         Source_location(
             string              filename,
-            const int           linenumber,
+            optional<int>       linenumber          = {},
             optional<int>       character_position  = {},
             optional<string>    function_name       = {}
-            )
-            : m_function_name{ move( function_name ).value_or( "" ) }
-            , m_filename{ move( filename ) }
-            , m_linenumber{ linenumber }
-            , m_character_position{ character_position.value_or( -1 ) }
+            ):
+            m_filename{ move( filename ) },
+            m_linenumber{ linenumber.value_or( -1 ) },
+            m_character_position{ character_position.value_or( -1 ) },
+            m_function_name{ move( function_name ).value_or( "" ) }
         {}
     };
 
