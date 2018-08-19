@@ -178,7 +178,7 @@ namespace cppx{
 
     // Membership check
     template< class Key, class Arg >
-    auto in( ref_<const Set_<Key>> set, ref_<const Arg> v )
+    auto is_in( ref_<const Set_<Key>> set, ref_<const Arg> v )
         -> bool
     { return set.count( v ) > 0; }
 
@@ -189,23 +189,23 @@ namespace cppx{
     //----------------------------------------- Related utility functions:
     
     template< class It, class Arg >
-    auto in_range( const It begin, const It end, ref_<const Arg> v )
+    auto is_in_range( const It begin, const It end, ref_<const Arg> v )
         -> bool
     { return find( begin, end, v ) != end; }
 
     template< class Key, Size n, class Arg >
-    auto in( ref_<raw_array_of_<n, const Key>> a, ref_<const Arg> v )
+    auto is_in( ref_<raw_array_of_<n, const Key>> a, ref_<const Arg> v )
         -> bool
-    { return in_range( begin( a ), end( a ), v ); }
+    { return is_in_range( begin( a ), end( a ), v ); }
 
     template< class It, class Arg >
-    auto in_sorted_range( const It begin, const It end, ref_<const Arg> v )
+    auto is_in_sorted_range( const It begin, const It end, ref_<const Arg> v )
         -> bool
     { return binary_search( begin, end, v ); }
 
     template< class Key, Size n, class Arg >
-    auto in_sorted( ref_<raw_array_of_<n, const Key>> a, ref_<const Arg> v )
+    auto is_in_sorted( ref_<raw_array_of_<n, const Key>> a, ref_<const Arg> v )
         -> bool
-    { return in_sorted_range( begin( a ), end( a ), v ); }
+    { return is_in_sorted_range( begin( a ), end( a ), v ); }
 
 }  // namespace cppx

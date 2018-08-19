@@ -1,10 +1,12 @@
+﻿// Source encoding: UTF-8 (π is a lowercase Greek "pi" character).
+
 #pragma once
 #include <cppx/text/stdstring-util.hpp>
 #include <stdlib/optional.hpp>          // std::optional
 #include <stdlib/utility.hpp>           // std::enable_if_t
 #include <stdlib/type_traits.hpp>       // std::is_same_v
 #include <optional>
-#include <utility>
+#include <utility>                      // std::move
 #include <type_traits>
 
 #ifndef CPPX_NO_DOLLAR_NAMES
@@ -19,6 +21,7 @@ namespace cppx
     using std::string;
     using std::enable_if_t;
     using std::is_same_v;
+    using std::move;
     using std::optional;
 
     class Source_location
@@ -36,7 +39,7 @@ namespace cppx
 
         auto file_and_line() const
             -> string
-        { return To_str{} << "File �" << filename() << "� at line " << linenumber(); }
+        { return To_str() << "File “" << filename() << "” at line " << linenumber(); }
 
         auto file_line_and_pos() const
             -> string

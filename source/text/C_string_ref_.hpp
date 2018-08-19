@@ -12,7 +12,7 @@ namespace cppx {
     using stdlib::ext::Size;
 
     template< class Char >
-    class C_string_ref
+    class C_string_ref_
     {
     private:
         ptr_<const Char>    m_s;
@@ -33,7 +33,7 @@ namespace cppx {
             -> Size
         { return (m_length == -1? m_length = char_traits<Char>::length( m_s ) : m_length); }
 
-        friend auto compare( ref_<const C_string_ref> a, ref_<const C_string_ref> b )
+        friend auto compare( ref_<const C_string_ref_> a, ref_<const C_string_ref_> b )
             -> int
         {
             const int length_of_a       = a.length();
@@ -45,15 +45,15 @@ namespace cppx {
         auto begin() const  -> ptr_<const Char>     { return m_s; }
         auto end() const    -> ptr_<const Char>     { return m_s + length(); }
 
-        C_string_ref( const ptr_<const Char> s )
+        C_string_ref_( const ptr_<const Char> s )
             : m_s{ s }
         {}
 
-        C_string_ref( ref_<const std::basic_string<Char>> s )
+        C_string_ref_( ref_<const std::basic_string<Char>> s )
             : m_s{ s.c_str() }
         {}
     };
 
-    using C_widestring_ref = C_string_ref<wchar_t>;
-    using C_bytestring_ref = C_string_ref<char>;
+    using C_string_ref      = C_string_ref_<char>;
+    using C_wstring_ref     = C_string_ref_<wchar_t>;
 }  // namespace cppx

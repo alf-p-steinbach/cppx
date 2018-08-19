@@ -23,7 +23,7 @@ namespace cppx{
     };
 
     template< class Key, class Value, class Arg >
-    auto in( ref_<const Map_<Key, Value>> map, ref_<const Arg> v )
+    auto is_in( ref_<const Map_<Key, Value>> map, ref_<const Arg> v )
         -> bool
     { return map.count( v ) > 0; }
 

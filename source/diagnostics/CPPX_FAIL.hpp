@@ -9,3 +9,8 @@
 #ifndef CPPX_NO_DOLLAR_NAMES
 #   define  $fail   CPPX_FAIL
 #endif
+
+namespace cppx
+{
+    using namespace stdlib::ext::hopefully_and_fail;
+}

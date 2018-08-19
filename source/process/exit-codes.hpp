@@ -20,10 +20,16 @@ namespace cppx{ namespace process{
 
     struct Exit_code
     {
-        enum Enum: int { success, failure = impl::general_failure_code };
+        enum Enum: int
+        {
+            success,
+            failure = impl::general_failure_code,
+            cppstdfailure = EXIT_FAILURE
+        };
     };
 
     static_assert( Exit_code::success == EXIT_SUCCESS, "!" );
     static_assert( Exit_code::failure != 0, "!" );
+    static_assert( Exit_code::cppstdfailure != 0, "!" );
 
 }}  // namespace cppx::process
