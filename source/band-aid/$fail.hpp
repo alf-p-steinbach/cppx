@@ -1,6 +1,8 @@
+﻿// Source encoding: UTF-8 (π is a lowercase Greek "pi" character).
 #pragma once
 #include <cppx/diagnostics/Source_location.hpp>
-#include <cppx/process/exit-codes.hpp>              // Included for convenience.
+#include <cppx/diagnostics/$source_location.hpp>
+#include <cppx/band-aid/standard-library/Exit_code.hpp>     // Included for convenience.
 #include <stdlib/extension/hopefully_and_fail.hpp>
 
 #define CPPX_FAIL( s ) \
@@ -12,5 +14,5 @@
 
 namespace cppx
 {
-    using namespace stdlib::ext::hopefully_and_fail;
+    using namespace stdlib::ext::hopefully_and_fail;    // hopefully, fail
 }

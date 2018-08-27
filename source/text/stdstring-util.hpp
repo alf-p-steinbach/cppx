@@ -1,3 +1,4 @@
+﻿// Source encoding: UTF-8 (π is a lowercase Greek "pi" character).
 #pragma once
 #include <cppx/text/ascii-support.hpp>              // cppx::"ascii stuff"
 #include <cppx/text/string-classification.hpp>      // cppx::is_...

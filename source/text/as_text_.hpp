@@ -1,15 +1,15 @@
+﻿// Source encoding: UTF-8 (π is a lowercase Greek "pi" character).
 #pragma once
-//------------------------------------ Reasonably efficient as_text_
+//------------------------------------ Reasonably efficient `as_text_()`
 
 #include <cppx/text/is_char_type_.hpp>              // cppx::is_char_type_
 #include <cppx/text/to_string_.hpp>                 // cppx::to_string_
-#include <stdlib/extension/type_builders.hpp>
+#include <cppx/type-builders.hpp>
 #include <stdlib/string.hpp>                        // std::(basic_string)
 #include <stdlib/utility.hpp>                       // std::enable_if_t
 
 namespace cppx
 {
-    using namespace stdlib::ext::type_builders;
     using std::basic_string;
     using std::enable_if_t;
 

@@ -1,4 +1,5 @@
-﻿#pragma once
+﻿// Source encoding: UTF-8 (π is a lowercase Greek "pi" character).
+#pragma once
 #include <cppx/Forward_iterator_operations_.hpp>
 
 namespace cppx{
@@ -9,14 +10,13 @@ namespace cppx{
         Integer     m_first;
         Integer     m_beyond;
 
-        class Iterator
-            : public Forward_iterator_operations_<Iterator, Integer>
+        class Iterator:
+            public Forward_iterator_operations_<Iterator, Integer>
         {
             Integer     m_current;
 
         public:
-            void advance()
-            { ++m_current; }
+            void advance() { ++m_current; }
 
             auto operator*() const
                 -> Integer

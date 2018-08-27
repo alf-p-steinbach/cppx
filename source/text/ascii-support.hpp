@@ -1,8 +1,9 @@
+﻿// Source encoding: UTF-8 (π is a lowercase Greek "pi" character).
 #pragma once
-#include <cppx/core-language/integral-types.hpp>    // cppx::Byte
+#include <cppx/band-aid/core-language/integral-types.hpp>   // cppx::Byte
 #include <cppx/text/is_char_type_.hpp>              // cppx::is_char_type_
+#include <cppx/type-builders.hpp>                   // cppx::ref_, ptr_
 #include <stdlib/extension/ascii.hpp>               // stdlib::ext::*
-#include <stdlib/extension/type_builders.hpp>       // ref_, ptr_
 #include <stdlib/c/string.hpp>                      // strlen
 #include <stdlib/c/ctype.hpp>                       // isspace
 #include <stdlib/string.hpp>                        // std::(string, wstring)
@@ -12,7 +13,6 @@
 
 namespace cppx
 {
-    using namespace stdlib::ext::type_builders;
     using std::basic_string;
     using std::basic_string_view;
     using std::enable_if_t;

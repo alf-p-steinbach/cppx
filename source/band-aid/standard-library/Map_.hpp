@@ -1,12 +1,10 @@
+﻿// Source encoding: UTF-8 (π is a lowercase Greek "pi" character).
 #pragma once
-#include <stdlib/extension/hopefully_and_fail.hpp>
-#include <stdlib/extension/type_builders.hpp>
+#include <cppx/type-builders.hpp>
 #include <stdlib/unordered_map.hpp>             // std::unordered_map
 
 namespace cppx{
     using std::unordered_map;
-    using namespace stdlib::ext::hopefully_and_fail;
-    using namespace stdlib::ext::type_builders;
 
     template< class Key, class Value >
     class Map_

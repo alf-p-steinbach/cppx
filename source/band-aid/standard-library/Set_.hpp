@@ -1,18 +1,17 @@
+﻿// Source encoding: UTF-8 (π is a lowercase Greek "pi" character).
 #pragma once
-#include <cppx/Range_.hpp>                          // cppx::Range
-#include <stdlib/extension/type_builders.hpp>
-#include <stdlib/extension/size_types.hpp>
+#include <cppx/band-aid/core-language/integral-types.hpp>
+#include <cppx/band-aid/$define_tag.hpp>
+#include <cppx/band-aid/Range_.hpp>                 // cppx::Range
+#include <cppx/type-builders.hpp>                   // cppx::(ref_, raw_array_of_)
 #include <stdlib/algorithm.hpp>                     // std::(find, binary_search)
 #include <stdlib/initializer_list.hpp>              // std::initializer_list
 #include <stdlib/iterator.hpp>                      // std::(begin, end, iterator_traits)
 #include <stdlib/utility.hpp>                       // std::move
 #include <stdlib/unordered_set.hpp>                 // std::unordered_set
 
-namespace tag {
-    using stdlib::ext::ptr_;
-    using Iterators = ptr_<struct Iterators_tag>;   // As pointer type it's instantiable.
-    using Values    = ptr_<struct Values_tag>;      // As pointer type it's instantiable.
-}  // namespace tag
+$define_tag( Iterators );       // tag::Iterators
+$define_tag( Values );          // tag.:Values
 
 namespace cppx{
     using std::begin;
@@ -24,7 +23,6 @@ namespace cppx{
     using std::move;
     using std::unordered_set;
     using stdlib::ext::Size;
-    using namespace stdlib::ext::type_builders;     // ref_, raw_array_of_
 
     struct Set
     {

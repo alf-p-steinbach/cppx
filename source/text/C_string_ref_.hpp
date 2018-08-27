@@ -1,11 +1,11 @@
+﻿// Source encoding: UTF-8 (π is a lowercase Greek "pi" character).
 #pragma once
-#include <stdlib/extension/type_builders.hpp>
+#include <cppx/type-builders.hpp>
 #include <stdlib/extension/size_types.hpp>
 #include <stdlib/algorithm.hpp>     // std::min
 #include <stdlib/string.hpp>        // std::basic_string
 
 namespace cppx {
-    using namespace stdlib::ext::type_builders;     // ptr_
     using std::basic_string;
     using std::char_traits;
     using std::min;

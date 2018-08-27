@@ -1,11 +1,10 @@
 #pragma once
-#include <stdlib/extension/type_builders.hpp>
+#include <cppx/type-builders.hpp>
 #include <stdlib/string.hpp>
 #include <stdlib/string_view.hpp>
 
 namespace cppx
 {
-    using namespace stdlib::ext::type_builders;
     using std::string;
     using std::string_view;
 

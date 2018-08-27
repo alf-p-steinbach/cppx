@@ -1,16 +1,15 @@
+﻿// Source encoding: UTF-8 (π is a lowercase Greek "pi" character).
 #pragma once
 //------------------------------------ String building
 
 #include <cppx/text/is_char_type_.hpp>              // cppx::is_char_type_
 #include <cppx/text/as_text_.hpp>                   // cppx::as_text_
-#include <stdlib/extension/type_builders.hpp>
+#include <cppx/type-builders.hpp>
 #include <stdlib/string.hpp>                        // std::(basic_string)
 #include <stdlib/utility.hpp>                       // std::enable_if_t
 
 namespace cppx
 {
-    using namespace stdlib::ext::type_builders;
-
     using std::enable_if_t;
     using std::basic_string;
 
@@ -60,11 +59,19 @@ namespace cppx
         { return move(*this).str(); }
 
         template< class Value >
-        auto operator<<( ref_<const Value> v )
+        auto operator<<( ref_<const Value> v ) &
             -> ref_<To_str_>
         {
             append_text_for( v );
             return *this;
+        }
+
+        template< class Value >
+        auto operator<<( ref_<const Value> v ) &&
+            -> To_str_&&
+        {
+            append_text_for( v );
+            return move( *this );
         }
     };
 
@@ -85,11 +92,19 @@ namespace cppx
         { return move(*this).str(); }
 
         template< class Value >
-        auto operator<<( ref_<const Value> v )
+        auto operator<<( ref_<const Value> v ) &
             -> ref_<To_stdstr_>
         {
             append_text_for( v );
             return *this;
+        }
+
+        template< class Value >
+        auto operator<<( ref_<const Value> v ) &&
+            -> To_stdstr_&&
+        {
+            append_text_for( v );
+            return move( *this );
         }
     };
 
@@ -107,11 +122,19 @@ namespace cppx
         { return str().c_str(); }
 
         template< class Value >
-        auto operator<<( ref_<const Value> v )
+        auto operator<<( ref_<const Value> v ) &
             -> ref_<To_cstr_>
         {
             append_text_for( v );
             return *this;
+        }
+
+        template< class Value >
+        auto operator<<( ref_<const Value> v ) &&
+            -> To_cstr_&&
+        {
+            append_text_for( v );
+            return move( *this );
         }
     };
 

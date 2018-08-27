@@ -1,9 +1,8 @@
+﻿// Source encoding: UTF-8 (π is a lowercase Greek "pi" character).
 #pragma once
 #include <stdlib/c/stdlib.hpp>      // EXIT_...
 
-namespace cppx{ namespace process{
-    namespace ns{ namespace process = ::cppx::process; }
-
+namespace cppx{
     namespace impl {
         #if defined( _WIN32 )
             namespace winapi {
@@ -22,14 +21,14 @@ namespace cppx{ namespace process{
     {
         enum Enum: int
         {
-            success,
-            failure = impl::general_failure_code,
-            cppstdfailure = EXIT_FAILURE
+            success             = 0,
+            failure             = impl::general_failure_code,
+            cppstd_failure      = EXIT_FAILURE
         };
     };
 
     static_assert( Exit_code::success == EXIT_SUCCESS, "!" );
     static_assert( Exit_code::failure != 0, "!" );
-    static_assert( Exit_code::cppstdfailure != 0, "!" );
+    static_assert( Exit_code::cppstd_failure != 0, "!" );
 
-}}  // namespace cppx::process
+}  // namespace cppx

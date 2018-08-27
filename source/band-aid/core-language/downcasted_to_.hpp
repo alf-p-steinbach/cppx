@@ -1,12 +1,11 @@
+﻿// Source encoding: UTF-8 (π is a lowercase Greek "pi" character).
 #pragma once
-#include <cppx/stdlib-wrappers/type-traits.hpp>     // cppx::is_base_and_derived
-#include <stdlib/extension/type_builders.hpp>
-#include <stdlib/utility.hpp>                       // std::enable_if_t
+#include <cppx/band-aid/standard-library/type-traits.hpp>   // cppx::is_base_and_derived
+#include <cppx/type-builders.hpp>                           // cppx::(ptr_, ref_)
+#include <stdlib/utility.hpp>                               // std::enable_if_t
 
 namespace cppx
 {
-    using namespace stdlib::ext::type_builders;
-
     template< class Derived, class Type,
         class = enable_if_t<is_base_and_derived<Type, Derived>>
         >

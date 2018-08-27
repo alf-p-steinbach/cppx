@@ -1,5 +1,5 @@
 #pragma once
-#include <type_traits>          // std::is_base_of
+#include <stdlib/type_traits.hpp>       // std::is_base_of
 
 namespace cppx
 {

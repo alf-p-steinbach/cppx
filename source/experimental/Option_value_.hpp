@@ -1,6 +1,7 @@
+﻿// Source encoding: UTF-8 (π is a lowercase Greek "pi" character).
 #pragma once
-#include <cppx/stdlib-wrappers/type-traits.hpp>
-#include <stdlib/extension/type_builders.hpp>
+#include <cppx/band-aid/standard-library/type-traits.hpp>
+#include <cppx/type-builders.hpp>
 #include <stdlib/tuple.hpp>
 
 // Preferably use this only in namespace `::name`
@@ -9,8 +10,6 @@
 
 namespace cppx
 {
-    using namespace stdlib::ext::type_builders;     // ref_ etc.
-
     namespace options_def
     {
         using std::enable_if_t;

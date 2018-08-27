@@ -1,11 +1,11 @@
-﻿#pragma once
-#include <stdlib/extension/type_builders.hpp>       // stdlib::ext::(ref_)
+﻿// Source encoding: UTF-8 (π is a lowercase Greek "pi" character).
+#pragma once
+#include <cppx/type-builders.hpp>                   // stdlib::ext::(ref_)
 #include <stdlib/iterator.hpp>                      // std::(begin, end, forward_iterator_tag)
 #include <stdlib/c/stddef.hpp>                      // ptrdiff_t
 
-namespace cppx{
-    using namespace stdlib::ext::type_builders;     // ptr_, ref_
-
+namespace cppx
+{
     using std::forward_iterator_tag;
     
     using Size = ptrdiff_t;

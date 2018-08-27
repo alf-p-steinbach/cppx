@@ -1,3 +1,4 @@
+﻿// Source encoding: UTF-8 (π is a lowercase Greek "pi" character).
 #pragma once
 #include <stdlib/type_traits.hpp>   // std::is_same_v
 

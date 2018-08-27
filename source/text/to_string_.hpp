@@ -1,14 +1,14 @@
+﻿// Source encoding: UTF-8 (π is a lowercase Greek "pi" character).
 #pragma once
 //------------------------------------ Generic access to std::to_string
 
-#include <stdlib/extension/type_builders.hpp>   // ref_
+#include <cppx/type-builders.hpp>       // cppx::ref_
 #include <cppx/text/is_char_type_.hpp>  // cppx::is_char_type_
 #include <stdlib/string.hpp>            // std::(basic_string, string, wstring, to_string, to_wstring)
 #include <stdlib/utility.hpp>           // std::enable_if_t
 
 namespace cppx
 {
-    using namespace stdlib::ext::type_builders;
     using std::enable_if_t;
     using std::basic_string;
     using std::string;

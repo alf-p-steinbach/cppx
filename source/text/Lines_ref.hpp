@@ -1,8 +1,9 @@
+﻿// Source encoding: UTF-8 (π is a lowercase Greek "pi" character).
 #pragma once
+#include <cppx/band-aid/core-language/integral-types.hpp>   // cppx::Size
+#include <cppx/band-aid/standard-library/String_view.hpp>   // cppx::String_view
 #include <cppx/Forward_iterator_operations_.hpp>    // cppx::Forward_iterator_operations_
-#include <cppx/stdlib-wrappers/String_view.hpp>     // cppx::String_view
-#include <stdlib/extension/size_types.hpp>          // stdlib::ext::Size
-#include <stdlib/extension/type_builders.hpp>       // stdlib::(ref_, *)
+#include <cppx/type-builders.hpp>                   // stdlib::(ref_, *)
 #include <stdlib/string_view.hpp>                   // std::string_view
 #include <stdlib/string.hpp>                        // std::string
 
@@ -12,7 +13,6 @@ namespace cppx
     using cppx::Forward_iterator_operations_;
     using cppx::String_view;
     using std::string;
-    using stdlib::ext::Size;
 
     class Lines_ref
     {

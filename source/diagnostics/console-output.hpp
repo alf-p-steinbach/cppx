@@ -1,13 +1,12 @@
+﻿// Source encoding: UTF-8 (π is a lowercase Greek "pi" character).
 #pragma once
-#include <stdlib/extension/type_builders.hpp>
+#include <cppx/type-builders.hpp>
 #include <stdlib/locale.hpp>        // std::ctype
 #include <stdlib/string.hpp>        // std::(basic_string, string, wstring)
 
 #include <iostream>                 // wclog
 
 namespace cppx{ namespace debug{
-    using namespace stdlib::ext::type_builders;
-
     using std::basic_string;
     using std::ctype;
     using std::clog;
