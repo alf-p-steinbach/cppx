@@ -5,12 +5,8 @@
 #include <cppx/diagnostics/$source_location.hpp>
 #include <stdlib/extension/hopefully_and_fail.hpp>
 
-#define CPPX_FAIL( s ) \
-    stdlib::ext::fail( CPPX_SOURCE_LOCATION().make_short_message( s ) )
-
-#ifndef CPPX_NO_DOLLAR_NAMES
-#   define  $fail   CPPX_FAIL
-#endif
+#define $fail( s ) \
+    stdlib::ext::fail( $source_location.make_short_message( s ) )
 
 namespace cppx
 {
