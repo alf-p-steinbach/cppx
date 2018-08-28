@@ -1,5 +1,6 @@
 ﻿// Source encoding: UTF-8 (π is a lowercase Greek "pi" character).
 #pragma once
+#include <cppx/band-aid/core-language/size_types.hpp>
 #include <cppx/type-builders.hpp>                   // stdlib::ext::(ref_)
 #include <stdlib/iterator.hpp>                      // std::(begin, end, forward_iterator_tag)
 #include <stdlib/c/stddef.hpp>                      // ptrdiff_t
@@ -8,8 +9,6 @@ namespace cppx
 {
     using std::forward_iterator_tag;
     
-    using Size = ptrdiff_t;
-
     template< class Derived, class Value_type_param >
     class Forward_iterator_operations_
     {
