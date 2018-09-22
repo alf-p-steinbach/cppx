@@ -32,6 +32,16 @@ namespace cppx{
         };
 
     public:
+        auto first() const  -> Integer { return m_first; }
+        auto last() const   -> Integer { return m_beyond - 1; }
+        auto beyond() const -> Integer { return m_beyond; }
+
+        auto size() const -> Integer { return m_beyond - m_first; }
+
+        auto contains( const Integer x ) const
+            -> bool
+        { return m_first <= x and x <= m_beyond - 1; }
+
         auto begin() const  -> Iterator     { return Iterator{ m_first }; }
         auto end() const    -> Iterator     { return Iterator{ m_beyond }; }
 

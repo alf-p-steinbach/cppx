@@ -1,7 +1,7 @@
 ﻿// Source encoding: UTF-8 (π is a lowercase Greek "pi" character).
 #pragma once
 #include <cppx/text/ascii-support.hpp>          // cppx::*
-#include <cppx/type-builders.hpp>
+#include <cppx/band-aid/core-language/type-builders.hpp>
 #include <stdlib/string.hpp>                    // std::(wstring)
 #include <stdlib/string_view.hpp>               // std::string_view
 
@@ -20,7 +20,7 @@ namespace cppx
     template< class Char >
     inline auto is_empty( ref_<const basic_string_view<Char>> v )
         -> bool
-    { return s.empty(); }
+    { return v.empty(); }
 
     template< class Char >
     inline auto is_empty( ref_<const basic_string<Char>> s )

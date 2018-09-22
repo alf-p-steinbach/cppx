@@ -4,7 +4,7 @@
 
 namespace cppx
 {
-    inline namespace exception_throwing
+    inline namespace hopefully_and_fail
     {
         using stdlib::ext::hopefully;
         using stdlib::ext::fail;

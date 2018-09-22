@@ -4,7 +4,7 @@
 #   error This file is only meaningful for Microsoft Windows.
 #endif
 
-#include <wrapped-windows/windows-h.hpp>
+#include <winapi-header-wrappers/windows-h.hpp>
 
 namespace cppx{ namespace debug{
 

@@ -1,6 +1,6 @@
 ﻿// Source encoding: UTF-8 (π is a lowercase Greek "pi" character).
 #pragma once
-#include <cppx/type-builders.hpp>
+#include <cppx/band-aid/core-language/type-builders.hpp>
 #include <stdlib/extension/size_types.hpp>
 #include <stdlib/algorithm.hpp>     // std::min
 #include <stdlib/string.hpp>        // std::basic_string
@@ -46,11 +46,12 @@ namespace cppx {
         auto end() const    -> ptr_<const Char>     { return m_s + length(); }
 
         C_string_ref_( const ptr_<const Char> s )
-            : m_s{ s }
+            : m_s( s )
         {}
 
         C_string_ref_( ref_<const std::basic_string<Char>> s )
-            : m_s{ s.c_str() }
+            : m_s( s.c_str() )
+            , m_length( s.length() )
         {}
     };
 
