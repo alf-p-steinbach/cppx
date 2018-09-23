@@ -6,6 +6,8 @@
 
 namespace cppx
 {
+    using std::enable_if_t;
+
     // Whether a `static_cast<Derived*>( &o )` would do the Right Thing.
     // `true` if a downcast via `dynamic_cast` succeeds.
     // `false` if the `dynamic cast` fails or gives a sideways cast.
