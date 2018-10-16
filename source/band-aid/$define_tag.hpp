@@ -1,10 +1,10 @@
 #pragma once
-#include <stdlib/extension/type_builders.hpp>
+#include <cppx/band-aid/core-language/type-builders.hpp>
 
 #define $define_tag( name )                             \
     namespace tag                                       \
     {                                                   \
-        using stdlib::ext::ptr_;                        \
-        using name = ptr_<struct name ## _tag>;         \
+        using cppx::p_;                                 \
+        using name = p_<struct name ## _tag>;           \
     }                                                   \
     static_assert( ::tag::name() == nullptr, "- support for semicolon - " )

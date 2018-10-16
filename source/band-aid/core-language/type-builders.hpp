@@ -27,10 +27,7 @@ namespace cppx
         // using impl::raw_array_of_;
         // using impl::item_type_of_;
 
-        template< class Type >  using c_    = const_<Type>;
         template< class Type >  using p_    = ptr_<Type>;
-        template< class Type >  using pc_   = p_<c_<Type>>;
         template< class Type >  using r_    = ref_<Type>;
-        template< class Type >  using rc_   = r_<c_<Type>>;
     }
 }

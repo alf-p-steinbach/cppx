@@ -10,20 +10,20 @@ namespace cppx{
     //using std::make_shared;
 
     template< class Type >
-    inline auto copy_of( rc_<Type> o )
+    inline auto copy_of( r_<const Type> o )
         -> p_<Type>
     {
         return new Type( o );
     }
 
     template< class Item >
-    inline void std_delete( pc_<Item> p )
+    inline void std_delete( p_<const Item> p )
     {
         default_delete<Item>()( const_cast<p_<Item>>( p ) );
     }
 
     template< class Item >
-    inline void no_delete( pc_<Item> )
+    inline void no_delete( p_<const Item> )
     {}
 
 }  // namespace cppx
